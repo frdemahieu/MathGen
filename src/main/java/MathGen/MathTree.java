@@ -9,7 +9,7 @@ public class MathTree {
     private double value;
     private char operator;//+ - × ÷
     
-    private static final double TRESHOLD = 0.1;
+    private static final double THRESHOLD = 0.1;
     
     
     public MathTree(double value){
@@ -20,7 +20,7 @@ public class MathTree {
     public MathTree(char operator){
         if(operator != '+' && operator != '-'
                 && operator != '*' && operator != '/')
-            throw new IllegalArgumentException("Symbol urecognised !");
+            throw new IllegalArgumentException("Symbol unrecognized ! ");
         this.operator = operator;
         this.isOperator = true;
     }
@@ -40,11 +40,11 @@ public class MathTree {
             default:
                 System.err.println("Unexpected operation ! ("+operator+")");
         }
-        return 0;
+        return 0; 
     }
     
     public boolean isCorrect(double result){
-        return Math.abs(result-getResult()) < TRESHOLD;
+        return Math.abs(result-getResult()) < THRESHOLD;
     }
     
     public MathTree getLeft() {
@@ -66,11 +66,11 @@ public class MathTree {
     @Override
     public String toString(){
         if(isOperator)
-            return "("+getRight().toString()+getBeautifullOperator(operator)+getLeft().toString()+")";
+            return "("+getRight().toString()+getDirtyOperator(operator)+getLeft().toString()+")";
         return ""+getProperValue(value);
     }
     
-    private char getBeautifullOperator(char operator){
+    private char getDirtyOperator(char operator){
         switch(operator) {
             case '*':
                 return '×';
@@ -86,8 +86,8 @@ public class MathTree {
             return ""+(int)value;
         return ""+value;
     }
-    
-    public static String removeExternalPerentheses(MathTree mt){
+     
+    public static String removeExternalPeTrentheses(MathTree mt){
         StringBuilder sb = new StringBuilder(mt.toString());
         sb.deleteCharAt(sb.indexOf("("));
         sb.deleteCharAt(sb.lastIndexOf(")"));

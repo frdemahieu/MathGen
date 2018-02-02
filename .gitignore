@@ -1,7 +1,4 @@
-
-Supprimerait .gitignore
-Supprimerait .idea/
-Supprimerait MathGen.iml
-Supprimerait pom.xml
-Supprimerait src/main/resources/
-Supprimerait target/
+# User-specific stuff:
+.idea/**/workspace.xml
+.idea/**/tasks.xml
+.idea/dictionaries
