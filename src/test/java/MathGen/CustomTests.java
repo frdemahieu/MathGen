@@ -9,7 +9,7 @@ public class CustomTests{
         int i = 0;
         while(i < nbr){
             MathTree mt = MathGen.generateProblem(MathLevel.HARD);
-            System.out.println(MathTree.removeExternalPerentheses(mt)+" = "+mt.getResult());
+            System.out.println(MathTree.removeExternalPeTrentheses(mt)+" = "+mt.getResult());
             i++;
         }
     
